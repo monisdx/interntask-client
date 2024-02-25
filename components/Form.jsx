@@ -55,6 +55,7 @@ const Form = ({
     console.log('clear')
     setcurrentdata(null);
     setform({ name: "", email: "", phonenumber: "", hobbies: "" });
+    console.log(form);
   };
 
   const handleback = () => {
@@ -107,7 +108,7 @@ const Form = ({
               placeholder="Enter name"
               required     
               minLength={3}         
-              defaultValue={form.name}
+              value={form.name}
               onChange={handleChange}
               className="placeholder:text-grey p-3 w-full text-black bg-white-100 rounded-lg outline-none border border-black font-medium"
             />
@@ -119,7 +120,7 @@ const Form = ({
               name="email"
               placeholder=" Enter email"
               required
-              defaultValue={form.email}
+              value={form.email}
               onChange={handleChange}
               className="placeholder:text-grey p-3 w-full text-black bg-white-100 rounded-lg outline-none border border-black font-medium"
             />
@@ -131,7 +132,7 @@ const Form = ({
               name="phonenumber"
               placeholder=" Enter phone number"
               required
-              defaultValue={form.phonenumber}
+              value={form.phonenumber}
               onChange={handleChange}
               pattern="[0-9]{10}" 
               className="placeholder:text-grey p-3 w-full text-black bg-white-100 rounded-lg outline-none border border-black font-medium"
@@ -144,7 +145,7 @@ const Form = ({
               name="hobbies"
               placeholder=" Enter your hobbies"
               required
-              defaultValue={form.hobbies}
+              value={form.hobbies}
               onChange={handleChange}
               className="placeholder:text-grey p-3 w-full text-black bg-white-100 rounded-lg outline-none border border-black font-medium"
             />
