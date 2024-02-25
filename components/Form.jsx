@@ -52,8 +52,9 @@ const Form = ({
   };
 
   const clear = () => {
+    console.log('clear')
     setcurrentdata(null);
-    setform({ name: "", email: "", phonenumber: "", hobbies: [] });
+    setform({ name: "", email: "", phonenumber: "", hobbies: "" });
   };
 
   const handleback = () => {
