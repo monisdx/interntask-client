@@ -52,7 +52,7 @@ const Tabledata = ({
     setselecteddata([]);
     try {
       const { data } = await axios.post(
-       serverUrl+"/data/send-mail",
+       serverUrl+"data/send-mail",
         obj
       );
       console.log(data);
@@ -64,7 +64,7 @@ const Tabledata = ({
 
   const deletedata = async (id) => {
     try {
-      const { data } = await axios.delete(serverUrl+`/data/${id}`);
+      const { data } = await axios.delete(serverUrl+`data/${id}`);
       console.log(data);
       setfetchagain(!fetchagain);
     } catch (error) {

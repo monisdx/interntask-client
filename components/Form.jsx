@@ -63,7 +63,7 @@ const Form = ({
 
   const createdata = async (form) => {
     try {
-      const { data } = await axios.post(serverUrl+"/data", form);
+      const { data } = await axios.post(serverUrl+"data", form);
       console.log(data);
       setfetchagain(!fetchagain);
     } catch (error) {

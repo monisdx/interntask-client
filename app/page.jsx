@@ -14,7 +14,7 @@ const Home = () => {
 
   const fetchdata = async () => {
     try{
-    const {data} =await axios.get(serverUrl+'/data');
+    const {data} =await axios.get(serverUrl+'data');
     console.log(data);
     setdata(data);
     }
