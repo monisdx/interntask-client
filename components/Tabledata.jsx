@@ -46,7 +46,7 @@ const Tabledata = ({
   };
 
   async function sendmail() {
-    const obj = { email: "moniskhandx@gmail.com", ids: selecteddata };
+    const obj = { email: "info@redpositive.in", ids: selecteddata };
 
     // console.log(obj);
     setselecteddata([]);
