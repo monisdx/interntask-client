@@ -5,14 +5,7 @@ import axios from "axios";
 import { MdCancel } from "react-icons/md";
 import { serverUrl } from "@/config";
 
-const Form = ({
-  setcurrentdata,
-  currentdata,
-  fetchagain,
-  setfetchagain,
-  model,
-  setmodel,
-}) => {
+const Form = ({ setcurrentdata, currentdata, refetch, model, setmodel }) => {
   const [form, setform] = useState({
     name: "",
     email: "",
@@ -52,7 +45,7 @@ const Form = ({
   };
 
   const clear = () => {
-    console.log('clear')
+    console.log("clear");
     setcurrentdata(null);
     setform({ name: "", email: "", phonenumber: "", hobbies: "" });
     console.log(form);
@@ -65,22 +58,18 @@ const Form = ({
 
   const createdata = async (form) => {
     try {
-      const { data } = await axios.post(serverUrl+"data", form);
-      console.log(data);
-      setfetchagain(!fetchagain);
+      const { data } = await axios.post(serverUrl + "data", form);
+      refetch();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
   const updatedata = async (id, form) => {
     try {
-      const { data } = await axios.put(
-        serverUrl+`data/${id}`,
-        form
-      );
+      const { data } = await axios.put(serverUrl + `data/${id}`, form);
       console.log(data);
-      setfetchagain(!fetchagain);
+      refetch();
     } catch (error) {
       console.log(error);
     }
@@ -106,8 +95,8 @@ const Form = ({
               type="text"
               name="name"
               placeholder="Enter name"
-              required     
-              minLength={3}         
+              required
+              minLength={3}
               value={form.name}
               onChange={handleChange}
               className="placeholder:text-grey p-3 w-full text-black bg-white-100 rounded-lg outline-none border border-black font-medium"
@@ -134,7 +123,7 @@ const Form = ({
               required
               value={form.phonenumber}
               onChange={handleChange}
-              pattern="[0-9]{10}" 
+              pattern="[0-9]{10}"
               className="placeholder:text-grey p-3 w-full text-black bg-white-100 rounded-lg outline-none border border-black font-medium"
             />
           </div>

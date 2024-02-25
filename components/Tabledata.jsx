@@ -18,8 +18,7 @@ import { serverUrl } from "@/config";
 
 const Tabledata = ({
   setcurrentdata,
-  fetchagain,
-  setfetchagain,
+  refetch,
   data,
   model,
   setmodel,
@@ -66,7 +65,7 @@ const Tabledata = ({
     try {
       const { data } = await axios.delete(serverUrl+`data/${id}`);
       console.log(data);
-      setfetchagain(!fetchagain);
+      refetch()
     } catch (error) {
       console.log(error);
     }
