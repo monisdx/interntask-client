@@ -14,6 +14,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { ImCheckboxUnchecked } from "react-icons/im";
 import { ImCheckboxChecked } from "react-icons/im";
 import { FaEdit } from "react-icons/fa";
+import { serverUrl } from "@/config";
 
 const Tabledata = ({
   setcurrentdata,
@@ -51,7 +52,7 @@ const Tabledata = ({
     setselecteddata([]);
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/data/send-mail",
+       serverUrl+"/data/send-mail",
         obj
       );
       console.log(data);
@@ -63,7 +64,7 @@ const Tabledata = ({
 
   const deletedata = async (id) => {
     try {
-      const { data } = await axios.delete(`http://localhost:5000/data/${id}`);
+      const { data } = await axios.delete(serverUrl+`/data/${id}`);
       console.log(data);
       setfetchagain(!fetchagain);
     } catch (error) {

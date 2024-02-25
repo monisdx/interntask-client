@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { MdCancel } from "react-icons/md";
+import { serverUrl } from "@/config";
 
 const Form = ({
   setcurrentdata,
@@ -62,7 +63,7 @@ const Form = ({
 
   const createdata = async (form) => {
     try {
-      const { data } = await axios.post("http://localhost:5000/data", form);
+      const { data } = await axios.post(serverUrl+"/data", form);
       console.log(data);
       setfetchagain(!fetchagain);
     } catch (error) {
@@ -73,7 +74,7 @@ const Form = ({
   const updatedata = async (id, form) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/data/${id}`,
+        serverUrl+`/data/${id}`,
         form
       );
       console.log(data);
