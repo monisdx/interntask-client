@@ -1,1 +1,1 @@
-export const serverUrl = "https://monis-server.netlify.app"
+export const serverUrl = "https://interntask-server.vercel.app/"

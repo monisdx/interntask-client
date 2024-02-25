@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react';
 import axios from 'axios';
 import Form from '@/components/Form';
 import Tabledata from '@/components/Tabledata';
+import { serverUrl } from "@/config";
 
 const Home = () => {
   const [model, setmodel] = useState(false);
@@ -13,7 +14,7 @@ const Home = () => {
 
   const fetchdata = async () => {
     try{
-    const {data} =await axios.get('http://localhost:5000/data');
+    const {data} =await axios.get(serverUrl+'/data');
     console.log(data);
     setdata(data);
     }
