@@ -74,7 +74,7 @@ const Form = ({
   const updatedata = async (id, form) => {
     try {
       const { data } = await axios.put(
-        serverUrl+`/data/${id}`,
+        serverUrl+`data/${id}`,
         form
       );
       console.log(data);
